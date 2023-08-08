@@ -1,13 +1,12 @@
 package br.com.StudentRegistration.Connection;
 
-import java.sql.Connection;
+import java.sql.Connection; 
 import java.sql.SQLException;
-import java.sql.PreparedStatement;
+
 
 import javax.sql.DataSource;
-
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-import com.mysql.cj.xdevapi.PreparableStatement;
+
 
 public class ConnectionFactory {
 
