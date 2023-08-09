@@ -4,7 +4,7 @@ import br.com.StudentRegistration.functions.CreateParameter;
 
 public class Student {
 	
-	private Integer id ;
+
 	private String fullName;
 	private Integer age ;
 	private String email;
@@ -25,6 +25,7 @@ public class Student {
 		this.phone = createParameter.createString("telefone: ");
 		
 	}
+	
 
 	public  String getFullName() {
 		return this.fullName;
@@ -57,6 +58,41 @@ public class Student {
 	public String getPhone() {
 		
 		return this.phone;
+	}
+	
+	public void setFullName(String fullName) {
+
+		this.fullName = fullName;
+	}
+
+	public void setAge(Integer age) {
+
+		this.age = age;
+	}
+
+	public void setEmail(String email) {
+
+		this.email= email;
+	}
+
+	public void setGraduation(String graduation) {
+
+		this.graduation = graduation;
+	}
+
+	public void setRegistrationDate(String registrationDate) {
+
+		this.registrationDate = registrationDate;
+	}
+
+	public void setAddress(String address) {
+
+		this.address = address;
+	}
+
+	public void setPhone(String phone) {
+
+		this.phone = phone;
 	}
 	
 

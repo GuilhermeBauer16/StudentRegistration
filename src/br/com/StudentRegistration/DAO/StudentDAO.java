@@ -1,12 +1,12 @@
 package br.com.StudentRegistration.DAO;
 
-import java.sql.Connection;
+import java.sql.Connection; 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import br.com.StudentRegistration.Connection.ConnectionFactory;
+
 import br.com.StudentRegistration.Student.Student;
 
 public class StudentDAO {
@@ -65,12 +65,12 @@ public class StudentDAO {
 						System.out.println("tabela criada ");
 					}catch (SQLException e) {
 						System.out.println("erro ao criar a tabela " + e.getMessage());
-						System.out.println("ROLLBACK EXECUTADO");
 						connection.rollback();
 					
 				}
 			
 	}
+			
 			
 			public void SelectTables(Connection connection) throws SQLException {
 				String sql = "SELECT * FROM student";
@@ -104,5 +104,52 @@ public class StudentDAO {
 					}
 				
 			}
-	
-}
+			
+		public void DeleteTable(Connection connection , int id) throws SQLException {
+			
+			String sql = "DELETE FROM student WHERE ID = ? ";
+			try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+				
+				connection.setAutoCommit(false);
+				preparedStatement.setInt(1, id);
+				preparedStatement.executeUpdate();
+				connection.commit();
+			}catch (SQLException e) {
+				System.out.println("erro ao deletar a tabela" + e.getMessage());
+				connection.rollback();
+		}}
+			
+			public void EditStudent(Connection connection , int id , String newFullName ,int newAge ,String newEmail ,
+					String newGraduation , String registrationDate , String newAddress ,String newPhone) throws SQLException {
+				
+				String sqlUpdate = "UPDATE student SET "
+						+ "fullName = ? ,"
+						+ "age = ?,"
+						+ "email = ?,"
+						+ "graduation = ?,"
+						+ "registrationDate = ?,"
+						+ "address = ? ,"
+						+ "phone = ? "
+						+ "WHERE id = ?";
+
+				try(PreparedStatement preparedStatement = connection.prepareStatement(sqlUpdate))
+						{
+					
+					connection.setAutoCommit(false);
+					
+					preparedStatement.setString(1,newFullName);
+					preparedStatement.setInt(2,newAge);
+					preparedStatement.setString(3,newEmail);
+					preparedStatement.setString(4,newGraduation);
+					preparedStatement.setString(5, registrationDate);
+					preparedStatement.setString(6, newAddress);
+					preparedStatement.setString(7 , newPhone);
+					preparedStatement.setInt(8,id);
+					preparedStatement.executeUpdate();
+					connection.commit();
+				}catch (SQLException e) {
+					System.out.println("erro ao atualizar a tabela" + e.getMessage());
+					connection.rollback();
+			}
+			}
+			}
