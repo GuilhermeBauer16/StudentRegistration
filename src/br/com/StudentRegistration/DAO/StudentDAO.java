@@ -2,7 +2,9 @@ package br.com.StudentRegistration.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import br.com.StudentRegistration.Connection.ConnectionFactory;
 import br.com.StudentRegistration.Student.Student;
@@ -21,7 +23,7 @@ public class StudentDAO {
 			String sql = "INSERT INTO student"
 					+ " (fullName , age , email , graduation , registrationDate , address , phone)"
 					+ "VALUES ( ? , ? , ? , ? , ? , ? , ?)";
-			try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+			try(PreparedStatement preparedStatement = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)){
 				
 				connection.setAutoCommit(false);
 				preparedStatement.setString(1 ,student.getFullName() );
@@ -32,8 +34,9 @@ public class StudentDAO {
 				preparedStatement.setString(6 , student.getAddress());
 				preparedStatement.setString(7 , student.getPhone());
 				
-				preparedStatement.executeUpdate();
+				preparedStatement.execute();
 				connection.commit();
+
 				
 			}catch (SQLException e) {
 				System.out.println("erro ao criar a banco de dados" + e.getMessage());
@@ -68,5 +71,38 @@ public class StudentDAO {
 				}
 			
 	}
+			
+			public void SelectTables(Connection connection) throws SQLException {
+				String sql = "SELECT * FROM student";
+				try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+					preparedStatement.execute();
+					try(ResultSet resultSet = preparedStatement.getResultSet()){
+						System.out.println("=".repeat(150));
+						System.out.println("ID  |       Nome completo      | idade |         email          |     graduação      | data inicio |             endereço             | telefone    |");
+						System.out.println("=".repeat(150)); 
+						
+						while (resultSet.next()) {
+			                int id = resultSet.getInt("id");
+			                String fullName = resultSet.getString("fullName");
+			                int age = resultSet.getInt("age");
+			                String email = resultSet.getString("email");
+			                String graduation = resultSet.getString("graduation");
+			                String registrationDate = resultSet.getString("registrationDate");
+			                String address = resultSet.getString("address");
+			                String phone = resultSet.getString("phone");
+			                
+			                System.out.printf("%-4d|%-26s|%-7d|%-24s|%-20s|%-13s|%-34s|%-12s|%n",
+	                                  id, fullName, age, email, graduation, registrationDate, address, phone);
+	            }
+
+						
+	              } catch (SQLException e) {
+	                  System.out.println("erro ao consultar a tabela " + e.getMessage());
+	              }
+						
+						
+					}
+				
+			}
 	
 }

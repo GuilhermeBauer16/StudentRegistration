@@ -13,20 +13,49 @@ import br.com.StudentRegistration.functions.CreateParameter;
 
 public class main {
 
-	public static void main(String[] args) throws SQLException {
-		CreateDB createDb = new CreateDB();
+	public static void main(String[] args) throws SQLException, InterruptedException {
+
 		ConnectionFactory connectionFactory = new ConnectionFactory();
 
 		CreateParameter createParameter = new CreateParameter();
 			
 		try( Connection connection = connectionFactory.recoverConnection()){
 			
-			Student student = new Student();
 			StudentDAO studentDAO = new StudentDAO(connection);
 			studentDAO.CreateTable(connection);
-			studentDAO.InsertDB(student);
 			
-		}
+			while (true) {
+				System.out.println("[1]novo aluno");
+				System.out.println("[2]editar dados aluno");
+				System.out.println("[3]editar aluno");
+				System.out.println("[4]deletar aluno");
+				System.out.println("[5]Visualizar alunos");
+				System.out.println("[6]sair");
+				int option = createParameter.createInt("sua opção: ");
+				
+				if (option == 1) {
+					Student student = new Student();
+					studentDAO.InsertDB(student);
+			
+				}else if (option == 2) {
+			
+				}else if (option == 3 ) {
+					
+			
+				}else if (option == 4) {
+				
+				}else if (option == 5) {
+					
+					studentDAO.SelectTables(connection);
+				
+				}else if (option == 6) {
+					
+					System.out.println("saindo...");
+					Thread.sleep(1000);
+					break;
+					
+					}
+				}
 		
 		
 		
@@ -34,4 +63,4 @@ public class main {
 
 	}
 
-}  
+}  }
