@@ -16,7 +16,12 @@ eficiente a conexão e a utilização dos métodos relacionados ao banco de dado
 tornar o meu projeto mais limpo e aderente a padrões de projeto.
 
 ## Funções
-
+* Adição de alunos com os seguintes critérios:
+  
+  * Nome completo: O usuário poderá adicionar o nome completo do aluno.
+  * Idade: O usuário poderá adicionar a idade do aluno.
+  *  Email: O usuário poderá adicionar o email do aluno.
+  *  Curso: O usuário poderá adicionar o curso do aluno.
 * Edição dos alunos cadastrados.
 
 * Deleção dos alunos cadastrados.
