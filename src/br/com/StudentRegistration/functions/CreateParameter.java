@@ -22,7 +22,7 @@ public class CreateParameter {
 				numero = scanner.nextInt();
 				break;
 			}else {
-				System.out.println("Por favor digite um nÃºmero!");
+				System.out.println("Por favor digite um número!");
 				scanner.nextLine();
 			}
 		}
@@ -38,11 +38,20 @@ public class CreateParameter {
 				numero = scanner.nextDouble();
 				break;
 			}else {
-				System.out.println("Por favor digite um nÃºmero!");
+				System.out.println("Por favor digite um número!");
 				scanner.nextLine();
 			}
 		}
 		return numero;
 	}
+	
+    public String title(String mesage, int number) {
+        String linha = "==".repeat(number);
+        return linha + "\n" + mesage + "\n" + linha;
+    }
+
+    public String line(int number) {
+        return "==".repeat(number);
+    }
 
 }

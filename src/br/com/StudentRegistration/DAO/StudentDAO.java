@@ -78,7 +78,7 @@ public class StudentDAO {
 					preparedStatement.execute();
 					try(ResultSet resultSet = preparedStatement.getResultSet()){
 						System.out.println("=".repeat(150));
-						System.out.println("ID  |       Nome completo      | idade |         email          |     graduaÃ§Ã£o      | data inicio |             endereÃ§o             | telefone    |");
+						System.out.println("ID  |       Nome completo      | idade |         email          |     graduação      | data inicio |             endereço             | telefone    |");
 						System.out.println("=".repeat(150)); 
 						
 						while (resultSet.next()) {
@@ -94,6 +94,7 @@ public class StudentDAO {
 			                System.out.printf("%-4d|%-26s|%-7d|%-24s|%-20s|%-13s|%-34s|%-12s|%n",
 	                                  id, fullName, age, email, graduation, registrationDate, address, phone);
 	            }
+						System.out.println("=".repeat(150)); 
 
 						
 	              } catch (SQLException e) {

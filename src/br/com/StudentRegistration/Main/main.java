@@ -25,18 +25,22 @@ public class main {
 			studentDAO.CreateTable(connection);
 			
 			while (true) {
+				System.out.println(createParameter.title("Cadastro de aluno", 40)); 
 				System.out.println("[1]novo aluno");
 				System.out.println("[2]editar dados aluno");
 				System.out.println("[3]deletar aluno");
 				System.out.println("[4]Visualizar alunos");
 				System.out.println("[5]sair");
-				int option = createParameter.createInt("sua opÃ§Ã£o: ");
+				System.out.println(createParameter.line(40));
+				int option = createParameter.createInt("sua opção: ");
 				
 				if (option == 1) {
-					Student newStudent = new Student();;
+					System.out.println(createParameter.title("Novo aluno", 40));
+					Student newStudent = new Student();
 					studentDAO.InsertDB(newStudent);
 			
 				}else if (option == 2) {
+					System.out.println(createParameter.title("Edição de aluno", 40));
 					studentDAO.SelectTables(connection);
 					int editId = createParameter.createInt("Digite o ID do aluno: ");
 					String newFullName = createParameter.createString("Digite o seu nome: ");
@@ -44,17 +48,19 @@ public class main {
 					String newEmail = createParameter.createString("Seu email: ");
 					String newGraduation = createParameter.createString("Seu curso: ");
 					String registrationDate = createParameter.createString("data do inicio: ");
-					String newAddress = createParameter.createString("Seu endereÃ§o: ");
+					String newAddress = createParameter.createString("Seu endereço: ");
 					String newPhone = createParameter.createString("telefone: ");
 					studentDAO.EditStudent(connection, editId , newFullName , newAge , newEmail ,newGraduation ,registrationDate , newAddress , newPhone );
 			
 				}else if (option == 3 ) {
+					System.out.println(createParameter.title("Deleção de aluno", 40));
 					studentDAO.SelectTables(connection);
 					int deleteId = createParameter.createInt("Digite o ID do aluno: ");
 					
 					studentDAO.DeleteTable(connection, deleteId);
 			
 				}else if (option == 4) {
+					System.out.println("Visualização dos alunos");
 					studentDAO.SelectTables(connection);
 				
 				}else if (option == 5) {
