@@ -14,3 +14,15 @@ Aprendi a otimizar meu código, aprimorando o encapsulamento, criando uma Connec
 Factory e implementando um padrão DAO (Data Access Object) para gerenciar de forma mais 
 eficiente a conexão e a utilização dos métodos relacionados ao banco de dados, além de
 tornar o meu projeto mais limpo e aderente a padrões de projeto.
+
+## Funções
+
+* Edição dos alunos cadastrados.
+
+* Deleção dos alunos cadastrados.
+
+* Visualização dos alunos cadastrados.
+
+ ## Autor 
+
+ www.linkedin.com/in/guilherme-bauer-desenvolvedor
