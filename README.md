@@ -8,6 +8,10 @@ endereço e telefone.Além disso, eles terão a possibilidade de visualizar, del
 ## Exemplo de funcionamento
 ![image](https://github.com/GuilhermeBauer16/StudentRegistration/assets/123701893/b5762792-a5ac-4c22-8213-35b0f24df4ff)
 
+
+https://github.com/GuilhermeBauer16/StudentRegistration/assets/123701893/296de2f6-2960-4f1c-87f5-1d40faa5a6a4
+
+
 ## Aprendizado
 
 Esse projeto proporcionou aprendizados relacionados tanto em Java quanto em MySQL.
