@@ -3,7 +3,7 @@
 ## Objetivo 
 Com esse sistema de cadastro de alunos, os usuários poderão adicionar 
 informações como nome completo, idade, email, curso, data de início do curso (AAAA/MM/DD),
-endereço e telefone.Além disso, eles terão a possibilidade de visualizar, deletar e editar.
+endereço e telefone.Além disso, eles terão a possibilidade de visualizar, deletar e editar.    
 
 ## Exemplo de funcionamento
 ![image](https://github.com/GuilhermeBauer16/StudentRegistration/assets/123701893/b5762792-a5ac-4c22-8213-35b0f24df4ff)
