@@ -21,7 +21,7 @@ public class Student {
 		this.email = createParameter.createString("Seu email: ");
 		this.graduation = createParameter.createString("Seu curso: ");
 		this.registrationDate = createParameter.createString("data do inicio: ");
-		this.address = createParameter.createString("Seu endereÃ§o: ");
+		this.address = createParameter.createString("Seu endereço: ");
 		this.phone = createParameter.createString("telefone: ");
 		
 	}

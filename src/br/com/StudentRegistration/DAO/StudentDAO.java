@@ -55,14 +55,14 @@ public class StudentDAO {
 							+ "graduation VARCHAR(80),"
 							+ "registrationDate DATE,"
 							+ "address VARCHAR(255),"
-							+ "phone VARCHAR(15))";
+							+ "phone VARCHAR(16))";
 					
 					try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
 						
 						connection.setAutoCommit(false);
 						preparedStatement.execute();
 						connection.commit();
-						System.out.println("tabela criada ");
+						
 					}catch (SQLException e) {
 						System.out.println("erro ao criar a tabela " + e.getMessage());
 						connection.rollback();
@@ -77,9 +77,9 @@ public class StudentDAO {
 				try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
 					preparedStatement.execute();
 					try(ResultSet resultSet = preparedStatement.getResultSet()){
-						System.out.println("=".repeat(150));
-						System.out.println("ID  |       Nome completo      | idade |         email          |     graduação      | data inicio |             endereço             | telefone    |");
-						System.out.println("=".repeat(150)); 
+						System.out.println("=".repeat(172));
+						System.out.println("ID  |            Nome completo           | idade |            email                 |     graduação      | data inicio |             endereço             | telefone     |");
+						System.out.println("=".repeat(172)); 
 						
 						while (resultSet.next()) {
 			                int id = resultSet.getInt("id");
@@ -91,10 +91,10 @@ public class StudentDAO {
 			                String address = resultSet.getString("address");
 			                String phone = resultSet.getString("phone");
 			                
-			                System.out.printf("%-4d|%-26s|%-7d|%-24s|%-20s|%-13s|%-34s|%-12s|%n",
+			                System.out.printf("%-4d|%-36s|%-7d|%-34s|%-20s|%-13s|%-34s|%-12s|%n",
 	                                  id, fullName, age, email, graduation, registrationDate, address, phone);
 	            }
-						System.out.println("=".repeat(150)); 
+						System.out.println("=".repeat(172)); 
 
 						
 	              } catch (SQLException e) {
