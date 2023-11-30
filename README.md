@@ -1,4 +1,4 @@
-# Student registration     
+# Student registration              
 
 ## Objetivo 
 Com esse sistema de cadastro de alunos, os usuários poderão adicionar 
