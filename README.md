@@ -12,7 +12,7 @@ endereço e telefone.Além disso, eles terão a possibilidade de visualizar, del
 https://github.com/GuilhermeBauer16/StudentRegistration/assets/123701893/296de2f6-2960-4f1c-87f5-1d40faa5a6a4
 
 
-## Aprendizado
+## Aprendizado.       
 
 Esse projeto proporcionou aprendizados relacionados tanto em Java quanto em MySQL.
 Aprendi a otimizar meu código, aprimorando o encapsulamento, criando uma Connection 
